@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Academic Chatbot Dashboard</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<!-- Landing Page -->
+<div id="landing-page" class="landing-page">
+  <h1>🎓 Academic Chatbot</h1>
+  <div class="portal-buttons">
+    <button id="student-btn"><i class="fa-solid fa-user-graduate"></i> Student Assistant</button>
+    <button id="admin-btn"><i class="fa-solid fa-user-tie"></i> Admin Assistant</button>
+  </div>
+</div>
+
+<!-- Student Dashboard -->
+<div id="student-dashboard" class="dashboard hidden">
+  <div class="sidebar">
+    <h2>Student Menu</h2>
+    <button class="menu-btn" data-feature="profile"><i class="fa-solid fa-id-card"></i> Profile</button>
+    <button class="menu-btn" data-feature="timetable"><i class="fa-solid fa-calendar"></i> Timetable</button>
+    <button class="menu-btn" data-feature="academic-calendar"><i class="fa-solid fa-calendar-days"></i> Academic Calendar</button>
+    <button class="menu-btn" data-feature="assignments"><i class="fa-solid fa-book"></i> Assignments</button>
+    <button class="menu-btn" data-feature="notifications"><i class="fa-solid fa-bell"></i> Notifications</button>
+    <button class="menu-btn" data-feature="fees"><i class="fa-solid fa-money-bill-wave"></i> Fees</button>
+    <button id="back-student" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back</button>
+  </div>
+  <div class="main-panel">
+    <div class="feature-panel" id="student-feature-panel">
+      <h3>Feature Panel</h3>
+      <div id="student-feature-display" class="feature-cards"></div>
+    </div>
+    <div class="chat-panel">
+      <h3>Student Chat</h3>
+      <div id="student-chat" class="chat-box"></div>
+      <div class="chat-input">
+        <input type="text" id="student-input" placeholder="Ask a question..."/>
+        <button id="student-send"><i class="fa-solid fa-paper-plane"></i> Send</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Admin Dashboard -->
+<div id="admin-dashboard" class="dashboard hidden">
+  <div class="sidebar">
+    <h2>Admin Menu</h2>
+    <button class="menu-btn" data-feature="announcements"><i class="fa-solid fa-bullhorn"></i> Announcements</button>
+    <button class="menu-btn" data-feature="manage-students"><i class="fa-solid fa-users"></i> Manage Students</button>
+    <button class="menu-btn" data-feature="manage-courses"><i class="fa-solid fa-book-open"></i> Manage Courses</button>
+    <button class="menu-btn" data-feature="analytics"><i class="fa-solid fa-chart-line"></i> Analytics</button>
+    <button id="back-admin" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back</button>
+  </div>
+  <div class="main-panel">
+    <div class="feature-panel" id="admin-feature-panel">
+      <h3>Feature Panel</h3>
+      <div id="admin-feature-display" class="feature-cards"></div>
+    </div>
+    <div class="chat-panel">
+      <h3>Admin Chat</h3>
+      <div id="admin-chat" class="chat-box"></div>
+      <div class="chat-input">
+        <input type="text" id="admin-input" placeholder="Ask a question..."/>
+        <button id="admin-send"><i class="fa-solid fa-paper-plane"></i> Send</button>
+        <button onclick="loadFeature('profile')">Profile</button>
+        <button onclick="loadFeature('timetable')">Timetable</button>
+        <button onclick="loadFeature('fees')">Fees</button>
+        <div id="feature-output"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
